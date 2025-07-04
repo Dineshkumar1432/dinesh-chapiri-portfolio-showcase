@@ -32,15 +32,6 @@ const Projects = () => {
       featured: false
     },
     {
-      title: "Online Movie Ticket Booking System",
-      description: "Java-based system for browsing movies, viewing showtimes, selecting seats, and completing payments.",
-      features: ["User-friendly interface", "Seat selection", "Dynamic movie management", "Payment system"],
-      tech: ["Java", "OOP", "GUI Development"],
-      github: "#",
-      live: null,
-      featured: false
-    },
-    {
       title: "Chatbot using NLP",
       description: "AI-powered chatbot achieving over 85% intent classification accuracy using Logistic Regression and NLP techniques.",
       features: ["NLP processing", "Intent classification", "Machine learning", "85% accuracy"],
@@ -54,7 +45,7 @@ const Projects = () => {
       description: "Modern dental clinic management dashboard with user authentication and dynamic data visualization.",
       features: ["User authentication", "Dynamic data views", "Clinic management", "Modern UI"],
       tech: ["MongoDB", "Express.js", "React.js", "Node.js"],
-      github: "#",
+      github: "https://github.com/Dineshkumar1432/dentalcare.git",
       live: null,
       featured: false
     },
@@ -63,7 +54,7 @@ const Projects = () => {
       description: "Comprehensive job board application with integrated AI chatbot for posting jobs and managing applications.",
       features: ["AI chatbot integration", "Job filters", "Application management", "Clean UI"],
       tech: ["React.js", "Node.js", "AI Integration", "Database"],
-      github: "#",
+      github: "https://github.com/Dineshkumar1432/job-board-blueprint-gen.git",
       live: "#",
       featured: false
     }
@@ -84,15 +75,15 @@ const Projects = () => {
           {projects.filter(project => project.featured).map((project, index) => (
             <div
               key={index}
-              className="bg-white border border-gray-200 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2"
+              className="bg-white border border-gray-200 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 flex flex-col h-full"
             >
-              <div className="p-6">
+              <div className="p-6 flex flex-col flex-grow">
                 <div className="flex items-center justify-between mb-4">
-                  <h3 className="text-xl font-semibold text-gray-800">{project.title}</h3>
-                  <Star className="text-yellow-500" size={20} />
+                  <h3 className="text-xl font-semibold text-gray-800 line-clamp-2">{project.title}</h3>
+                  <Star className="text-yellow-500 flex-shrink-0 ml-2" size={20} />
                 </div>
                 
-                <p className="text-gray-600 mb-4 leading-relaxed">
+                <p className="text-gray-600 mb-4 leading-relaxed flex-grow">
                   {project.description}
                 </p>
 
@@ -101,7 +92,7 @@ const Projects = () => {
                   <ul className="text-sm text-gray-600 space-y-1">
                     {project.features.map((feature, featureIndex) => (
                       <li key={featureIndex} className="flex items-center">
-                        <span className="w-1.5 h-1.5 bg-blue-600 rounded-full mr-2"></span>
+                        <span className="w-1.5 h-1.5 bg-blue-600 rounded-full mr-2 flex-shrink-0"></span>
                         {feature}
                       </li>
                     ))}
@@ -121,7 +112,7 @@ const Projects = () => {
                   </div>
                 </div>
 
-                <div className="flex gap-3">
+                <div className="flex gap-3 mt-auto">
                   <a
                     href={project.github}
                     className="flex-1 flex items-center justify-center px-4 py-2 bg-gray-800 text-white rounded-lg hover:bg-gray-900 transition-colors duration-300"
@@ -144,14 +135,14 @@ const Projects = () => {
           ))}
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.filter(project => !project.featured).map((project, index) => (
             <div
               key={index}
-              className="bg-gray-50 p-6 rounded-xl hover:shadow-md transition-shadow duration-300"
+              className="bg-gray-50 p-6 rounded-xl hover:shadow-md transition-shadow duration-300 flex flex-col h-full"
             >
-              <h3 className="text-lg font-semibold text-gray-800 mb-3">{project.title}</h3>
-              <p className="text-gray-600 text-sm mb-4">{project.description}</p>
+              <h3 className="text-lg font-semibold text-gray-800 mb-3 line-clamp-2">{project.title}</h3>
+              <p className="text-gray-600 text-sm mb-4 flex-grow">{project.description}</p>
               
               <div className="flex flex-wrap gap-1 mb-4">
                 {project.tech.slice(0, 3).map((tech, techIndex) => (
@@ -164,7 +155,7 @@ const Projects = () => {
                 ))}
               </div>
 
-              <div className="flex gap-2">
+              <div className="flex gap-2 mt-auto">
                 <a
                   href={project.github}
                   className="flex-1 text-center px-3 py-1 bg-gray-700 text-white rounded text-sm hover:bg-gray-800 transition-colors"
