@@ -39,6 +39,16 @@ const Skills = () => {
         { name: "Team Collaboration", level: 90 },
         { name: "Creativity", level: 80 }
       ]
+    },
+    {
+      title: "Coursework & Academic",
+      skills: [
+        { name: "Data Structures", level: 92 },
+        { name: "OOP", level: 88 },
+        { name: "DBMS", level: 90 },
+        { name: "Operating Systems", level: 85 },
+        { name: "Computer Networks", level: 87 }
+      ]
     }
   ];
 
@@ -53,7 +63,7 @@ const Skills = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8">
           {skillCategories.map((category, categoryIndex) => (
             <div
               key={categoryIndex}
@@ -80,22 +90,6 @@ const Skills = () => {
               </div>
             </div>
           ))}
-        </div>
-
-        <div className="mt-12 text-center">
-          <div className="bg-white p-8 rounded-xl shadow-md max-w-4xl mx-auto">
-            <h3 className="text-xl font-semibold text-gray-800 mb-4">Coursework & Academic Background</h3>
-            <div className="flex flex-wrap justify-center gap-3">
-              {['Data Structures (92%)', 'Object-Oriented Programming (88%)', 'Database Management Systems (90%)', 'Operating Systems (85%)', 'Computer Networks (87%)'].map((course, index) => (
-                <span
-                  key={index}
-                  className="px-4 py-2 bg-blue-100 text-blue-800 rounded-full text-sm font-medium"
-                >
-                  {course}
-                </span>
-              ))}
-            </div>
-          </div>
         </div>
 
         {/* Achievements Section */}
