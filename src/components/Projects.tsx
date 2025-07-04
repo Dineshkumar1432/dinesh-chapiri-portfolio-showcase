@@ -7,7 +7,7 @@ const Projects = () => {
     {
       title: "Chat Website using MERN Stack",
       description: "Real-time chat application built with MongoDB, Express.js, React.js, Node.js, and Socket.io for seamless communication.",
-      features: ["Group chats", "REST APIs", "Real-time messaging", "Scalable backend"],
+      features: ["Real-time messaging", "Group chat functionality", "RESTful APIs", "User authentication", "Scalable backend architecture"],
       tech: ["MongoDB", "Express.js", "React.js", "Node.js", "Socket.io"],
       github: "#",
       live: null,
@@ -16,7 +16,7 @@ const Projects = () => {
     {
       title: "Parkinson's Disease Prediction App",
       description: "Web application that predicts Parkinson's disease using CNN and LightGBM models with secure authentication.",
-      features: ["Secure login", "Medical data input", "Real-time prediction", "Data visualization"],
+      features: ["AI-powered prediction models", "Secure user authentication", "Medical data input forms", "Real-time disease prediction", "Interactive data visualization"],
       tech: ["Python", "CNN", "LightGBM", "Web Development"],
       github: "#",
       live: "#",
@@ -25,7 +25,7 @@ const Projects = () => {
     {
       title: "React Movie App",
       description: "Responsive movie browsing application with modular design, featuring smooth navigation and state management.",
-      features: ["Movie cards", "Routing", "Context API", "Responsive design"],
+      features: ["Interactive movie cards", "Dynamic routing system", "Context API state management", "Responsive design", "Movie search functionality"],
       tech: ["React.js", "Context API", "CSS", "JavaScript"],
       github: "#",
       live: "#",
@@ -34,7 +34,7 @@ const Projects = () => {
     {
       title: "Chatbot using NLP",
       description: "AI-powered chatbot achieving over 85% intent classification accuracy using Logistic Regression and NLP techniques.",
-      features: ["NLP processing", "Intent classification", "Machine learning", "85% accuracy"],
+      features: ["Natural language processing", "85%+ intent classification accuracy", "Machine learning algorithms", "Conversation flow management", "Real-time response generation"],
       tech: ["Python", "NLP", "Logistic Regression", "AI"],
       github: "#",
       live: null,
@@ -43,7 +43,7 @@ const Projects = () => {
     {
       title: "Tooth & Glow Dashboard",
       description: "Modern dental clinic management dashboard with user authentication and dynamic data visualization.",
-      features: ["User authentication", "Dynamic data views", "Clinic management", "Modern UI"],
+      features: ["User authentication system", "Clinic management tools", "Dynamic data visualization", "Appointment scheduling", "Patient record management"],
       tech: ["MongoDB", "Express.js", "React.js", "Node.js"],
       github: "https://github.com/Dineshkumar1432/dentalcare.git",
       live: null,
@@ -52,7 +52,7 @@ const Projects = () => {
     {
       title: "Job Board Blueprint Generator",
       description: "Comprehensive job board application with integrated AI chatbot for posting jobs and managing applications.",
-      features: ["AI chatbot integration", "Job filters", "Application management", "Clean UI"],
+      features: ["AI chatbot integration", "Job posting management", "Advanced job filters", "Application tracking system", "Clean user interface"],
       tech: ["React.js", "Node.js", "AI Integration", "Database"],
       github: "https://github.com/Dineshkumar1432/job-board-blueprint-gen.git",
       live: "#",
@@ -143,6 +143,18 @@ const Projects = () => {
             >
               <h3 className="text-lg font-semibold text-gray-800 mb-3 line-clamp-2">{project.title}</h3>
               <p className="text-gray-600 text-sm mb-4 flex-grow">{project.description}</p>
+              
+              <div className="mb-4">
+                <h4 className="text-xs font-semibold text-gray-700 mb-2">Key Features:</h4>
+                <ul className="text-xs text-gray-600 space-y-1">
+                  {project.features.slice(0, 3).map((feature, featureIndex) => (
+                    <li key={featureIndex} className="flex items-center">
+                      <span className="w-1 h-1 bg-blue-600 rounded-full mr-2 flex-shrink-0"></span>
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+              </div>
               
               <div className="flex flex-wrap gap-1 mb-4">
                 {project.tech.slice(0, 3).map((tech, techIndex) => (
