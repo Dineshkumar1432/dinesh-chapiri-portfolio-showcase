@@ -1,0 +1,191 @@
+
+import React from 'react';
+import { Github, Star, Users } from 'lucide-react';
+
+const Projects = () => {
+  const projects = [
+    {
+      title: "Chat Website using MERN Stack",
+      description: "Real-time chat application built with MongoDB, Express.js, React.js, Node.js, and Socket.io for seamless communication.",
+      features: ["Group chats", "REST APIs", "Real-time messaging", "Scalable backend"],
+      tech: ["MongoDB", "Express.js", "React.js", "Node.js", "Socket.io"],
+      github: "#",
+      live: null,
+      featured: true
+    },
+    {
+      title: "Parkinson's Disease Prediction App",
+      description: "Web application that predicts Parkinson's disease using CNN and LightGBM models with secure authentication.",
+      features: ["Secure login", "Medical data input", "Real-time prediction", "Data visualization"],
+      tech: ["Python", "CNN", "LightGBM", "Web Development"],
+      github: "#",
+      live: "#",
+      featured: true
+    },
+    {
+      title: "React Movie App",
+      description: "Responsive movie browsing application with modular design, featuring smooth navigation and state management.",
+      features: ["Movie cards", "Routing", "Context API", "Responsive design"],
+      tech: ["React.js", "Context API", "CSS", "JavaScript"],
+      github: "#",
+      live: "#",
+      featured: false
+    },
+    {
+      title: "Online Movie Ticket Booking System",
+      description: "Java-based system for browsing movies, viewing showtimes, selecting seats, and completing payments.",
+      features: ["User-friendly interface", "Seat selection", "Dynamic movie management", "Payment system"],
+      tech: ["Java", "OOP", "GUI Development"],
+      github: "#",
+      live: null,
+      featured: false
+    },
+    {
+      title: "Chatbot using NLP",
+      description: "AI-powered chatbot achieving over 85% intent classification accuracy using Logistic Regression and NLP techniques.",
+      features: ["NLP processing", "Intent classification", "Machine learning", "85% accuracy"],
+      tech: ["Python", "NLP", "Logistic Regression", "AI"],
+      github: "#",
+      live: null,
+      featured: true
+    },
+    {
+      title: "Tooth & Glow Dashboard",
+      description: "Modern dental clinic management dashboard with user authentication and dynamic data visualization.",
+      features: ["User authentication", "Dynamic data views", "Clinic management", "Modern UI"],
+      tech: ["MongoDB", "Express.js", "React.js", "Node.js"],
+      github: "#",
+      live: null,
+      featured: false
+    },
+    {
+      title: "Job Board Blueprint Generator",
+      description: "Comprehensive job board application with integrated AI chatbot for posting jobs and managing applications.",
+      features: ["AI chatbot integration", "Job filters", "Application management", "Clean UI"],
+      tech: ["React.js", "Node.js", "AI Integration", "Database"],
+      github: "#",
+      live: "#",
+      featured: false
+    }
+  ];
+
+  return (
+    <section id="projects" className="py-20 bg-white">
+      <div className="container mx-auto px-4">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl font-bold text-gray-800 mb-4">Featured Projects</h2>
+          <div className="w-20 h-1 bg-blue-600 mx-auto rounded-full"></div>
+          <p className="text-lg text-gray-600 mt-4 max-w-2xl mx-auto">
+            A showcase of my technical projects demonstrating full-stack development, AI/ML implementation, and creative problem-solving.
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+          {projects.filter(project => project.featured).map((project, index) => (
+            <div
+              key={index}
+              className="bg-white border border-gray-200 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2"
+            >
+              <div className="p-6">
+                <div className="flex items-center justify-between mb-4">
+                  <h3 className="text-xl font-semibold text-gray-800">{project.title}</h3>
+                  <Star className="text-yellow-500" size={20} />
+                </div>
+                
+                <p className="text-gray-600 mb-4 leading-relaxed">
+                  {project.description}
+                </p>
+
+                <div className="mb-4">
+                  <h4 className="text-sm font-semibold text-gray-700 mb-2">Key Features:</h4>
+                  <ul className="text-sm text-gray-600 space-y-1">
+                    {project.features.map((feature, featureIndex) => (
+                      <li key={featureIndex} className="flex items-center">
+                        <span className="w-1.5 h-1.5 bg-blue-600 rounded-full mr-2"></span>
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div className="mb-6">
+                  <div className="flex flex-wrap gap-2">
+                    {project.tech.map((tech, techIndex) => (
+                      <span
+                        key={techIndex}
+                        className="px-3 py-1 bg-blue-100 text-blue-800 text-xs rounded-full font-medium"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="flex gap-3">
+                  <a
+                    href={project.github}
+                    className="flex-1 flex items-center justify-center px-4 py-2 bg-gray-800 text-white rounded-lg hover:bg-gray-900 transition-colors duration-300"
+                  >
+                    <Github size={16} className="mr-2" />
+                    Code
+                  </a>
+                  {project.live && (
+                    <a
+                      href={project.live}
+                      className="flex-1 flex items-center justify-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-300"
+                    >
+                      <Star size={16} className="mr-2" />
+                      Live
+                    </a>
+                  )}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {projects.filter(project => !project.featured).map((project, index) => (
+            <div
+              key={index}
+              className="bg-gray-50 p-6 rounded-xl hover:shadow-md transition-shadow duration-300"
+            >
+              <h3 className="text-lg font-semibold text-gray-800 mb-3">{project.title}</h3>
+              <p className="text-gray-600 text-sm mb-4">{project.description}</p>
+              
+              <div className="flex flex-wrap gap-1 mb-4">
+                {project.tech.slice(0, 3).map((tech, techIndex) => (
+                  <span
+                    key={techIndex}
+                    className="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded-full"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
+
+              <div className="flex gap-2">
+                <a
+                  href={project.github}
+                  className="flex-1 text-center px-3 py-1 bg-gray-700 text-white rounded text-sm hover:bg-gray-800 transition-colors"
+                >
+                  Code
+                </a>
+                {project.live && (
+                  <a
+                    href={project.live}
+                    className="flex-1 text-center px-3 py-1 bg-blue-600 text-white rounded text-sm hover:bg-blue-700 transition-colors"
+                  >
+                    Live
+                  </a>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Projects;
