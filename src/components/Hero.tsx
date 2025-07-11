@@ -9,13 +9,13 @@ const Hero = () => {
         <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
           <div className="flex-1 text-center lg:text-left">
             <div className="mb-6">
-              <h1 className="text-4xl lg:text-6xl font-bold text-gray-800 mb-4">
-                Hi, I'm <span className="text-blue-600">Dinesh Chapiri</span>
+              <h1 className="text-4xl lg:text-6xl font-bold text-gray-800 mb-4 leading-tight">
+                Hi, I'm <span className="text-blue-600 bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">Dinesh Chapiri</span>
               </h1>
-              <h2 className="text-2xl lg:text-3xl text-gray-600 mb-4">
+              <h2 className="text-2xl lg:text-3xl text-gray-600 mb-4 font-medium">
                 Software Engineering Graduate
               </h2>
-              <p className="text-lg text-gray-500 max-w-2xl">
+              <p className="text-lg text-gray-500 max-w-2xl font-light">
                 "Building scalable, modular, and intelligent solutions."
               </p>
             </div>
@@ -55,13 +55,13 @@ const Hero = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <button
                 onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
-                className="px-8 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-300 shadow-md hover:shadow-lg"
+                className="px-8 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-300 shadow-md hover:shadow-lg font-medium"
               >
                 View My Work
               </button>
               <button
                 onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-                className="px-8 py-3 border-2 border-blue-600 text-blue-600 rounded-lg hover:bg-blue-600 hover:text-white transition-all duration-300"
+                className="px-8 py-3 border-2 border-blue-600 text-blue-600 rounded-lg hover:bg-blue-600 hover:text-white transition-all duration-300 font-medium"
               >
                 Get In Touch
               </button>
@@ -70,17 +70,24 @@ const Hero = () => {
 
           <div className="flex-1 flex justify-center">
             <div className="relative">
-              <div className="w-80 h-80 bg-gradient-to-br from-blue-400 to-indigo-600 rounded-full shadow-2xl flex items-center justify-center">
+              <div className="w-80 h-80 bg-gradient-to-br from-blue-400 to-indigo-600 rounded-full shadow-2xl flex items-center justify-center overflow-hidden">
                 <img
                   src="/lovable-uploads/4aa2ddf0-9c79-4997-9eb9-9855f4f2cc4f.png"
-                  alt="Dinesh Chapiri"
+                  alt="Dinesh Chapiri - Software Engineering Graduate"
                   className="w-72 h-72 rounded-full object-cover border-4 border-white shadow-lg"
+                  onError={(e) => {
+                    console.log('Image failed to load:', e);
+                    e.currentTarget.style.display = 'none';
+                  }}
+                  onLoad={() => {
+                    console.log('Profile image loaded successfully');
+                  }}
                 />
               </div>
-              <div className="absolute -top-4 -right-4 bg-white p-3 rounded-full shadow-lg">
+              <div className="absolute -top-4 -right-4 bg-white p-3 rounded-full shadow-lg animate-bounce">
                 <Star className="text-yellow-500" size={24} />
               </div>
-              <div className="absolute -bottom-4 -left-4 bg-white p-3 rounded-full shadow-lg">
+              <div className="absolute -bottom-4 -left-4 bg-white p-3 rounded-full shadow-lg animate-pulse">
                 <Users className="text-green-500" size={24} />
               </div>
             </div>
