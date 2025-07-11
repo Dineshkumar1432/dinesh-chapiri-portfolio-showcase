@@ -1,9 +1,41 @@
-
 import React from 'react';
-import { Github, Star, Users, ExternalLink } from 'lucide-react';
+import { Github, Star, Users, ExternalLink, Database, Server, Shield } from 'lucide-react';
 
 const Projects = () => {
   const projects = [
+    {
+      title: "Job Portal Backend System",
+      description: "Comprehensive backend API for job portal platform with advanced job matching algorithms, user management, and real-time notifications.",
+      features: ["RESTful API architecture", "JWT-based authentication", "Advanced job search & filtering", "File upload for resumes", "Email notification system", "Role-based access control"],
+      tech: ["Node.js", "Express.js", "MongoDB", "JWT", "Multer", "Nodemailer"],
+      github: "https://github.com/Dineshkumar1432/JobPortal-backend.git",
+      live: null,
+      featured: true,
+      image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      type: "backend"
+    },
+    {
+      title: "Healthcare Management Backend",
+      description: "Robust healthcare management system backend with patient records, appointment scheduling, and medical data security compliance.",
+      features: ["Patient management system", "Appointment scheduling API", "Medical records security", "Doctor-patient communication", "Prescription management", "HIPAA compliant architecture"],
+      tech: ["Node.js", "Express.js", "MongoDB", "Mongoose", "JWT", "Bcrypt"],
+      github: "https://github.com/Dineshkumar1432/HealthCareManagement-backend.git",
+      live: null,
+      featured: true,
+      image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      type: "backend"
+    },
+    {
+      title: "Hotel Management Backend",
+      description: "Complete hotel management backend system with booking engine, room management, payment processing, and guest services automation.",
+      features: ["Room booking & availability system", "Payment gateway integration", "Guest check-in/check-out API", "Inventory management", "Staff management system", "Revenue analytics"],
+      tech: ["Node.js", "Express.js", "MongoDB", "Stripe API", "JWT", "Mongoose"],
+      github: "https://github.com/Dineshkumar1432/HotelManagement-Backend.git",
+      live: null,
+      featured: true,
+      image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      type: "backend"
+    },
     {
       title: "Chat Website using MERN Stack",
       description: "Real-time chat application built with MongoDB, Express.js, React.js, Node.js, and Socket.io for seamless communication.",
@@ -12,7 +44,8 @@ const Projects = () => {
       github: "#",
       live: null,
       featured: true,
-      image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      type: "fullstack"
     },
     {
       title: "Parkinson's Disease Prediction App",
@@ -22,17 +55,8 @@ const Projects = () => {
       github: "#",
       live: "#",
       featured: true,
-      image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-    },
-    {
-      title: "React Movie App",
-      description: "Responsive movie browsing application with modular design, featuring smooth navigation and state management.",
-      features: ["Interactive movie cards with details", "Dynamic routing system", "Context API state management", "Responsive mobile-first design", "Advanced movie search functionality"],
-      tech: ["React.js", "Context API", "CSS", "JavaScript"],
-      github: "#",
-      live: "#",
-      featured: false,
-      image: "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      type: "ai/ml"
     },
     {
       title: "Chatbot using NLP",
@@ -42,7 +66,19 @@ const Projects = () => {
       github: "#",
       live: null,
       featured: true,
-      image: "https://images.unsplash.com/photo-1531746790731-6c087fecd65a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      image: "https://images.unsplash.com/photo-1531746790731-6c087fecd65a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      type: "ai/ml"
+    },
+    {
+      title: "React Movie App",
+      description: "Responsive movie browsing application with modular design, featuring smooth navigation and state management.",
+      features: ["Interactive movie cards with details", "Dynamic routing system", "Context API state management", "Responsive mobile-first design", "Advanced movie search functionality"],
+      tech: ["React.js", "Context API", "CSS", "JavaScript"],
+      github: "#",
+      live: "#",
+      featured: false,
+      image: "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      type: "frontend"
     },
     {
       title: "Tooth & Glow Dashboard",
@@ -52,7 +88,8 @@ const Projects = () => {
       github: "https://github.com/Dineshkumar1432/dentalcare.git",
       live: null,
       featured: false,
-      image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      type: "fullstack"
     },
     {
       title: "Job Board Blueprint Generator",
@@ -62,50 +99,86 @@ const Projects = () => {
       github: "https://github.com/Dineshkumar1432/job-board-blueprint-gen.git",
       live: "#",
       featured: false,
-      image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      type: "fullstack"
     }
   ];
 
+  const getTypeIcon = (type) => {
+    switch (type) {
+      case 'backend':
+        return <Server className="text-green-600" size={20} />;
+      case 'ai/ml':
+        return <Database className="text-purple-600" size={20} />;
+      case 'fullstack':
+        return <Users className="text-blue-600" size={20} />;
+      default:
+        return <Star className="text-yellow-500" size={20} />;
+    }
+  };
+
+  const getTypeBadge = (type) => {
+    const badges = {
+      backend: "bg-green-100 text-green-800",
+      frontend: "bg-orange-100 text-orange-800",
+      fullstack: "bg-blue-100 text-blue-800",
+      "ai/ml": "bg-purple-100 text-purple-800"
+    };
+    return badges[type] || "bg-gray-100 text-gray-800";
+  };
+
   return (
-    <section id="projects" className="py-20 bg-white">
+    <section id="projects" className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-800 mb-4">Featured Projects</h2>
-          <div className="w-20 h-1 bg-blue-600 mx-auto rounded-full"></div>
-          <p className="text-lg text-gray-600 mt-4 max-w-2xl mx-auto">
-            A showcase of my technical projects demonstrating full-stack development, AI/ML implementation, and creative problem-solving.
+          <div className="w-20 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto rounded-full"></div>
+          <p className="text-lg text-gray-600 mt-6 max-w-2xl mx-auto">
+            A comprehensive showcase of my technical projects spanning backend development, AI/ML implementation, and full-stack solutions.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+        {/* Featured Projects */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
           {projects.filter(project => project.featured).map((project, index) => (
             <div
               key={index}
-              className="bg-white border border-gray-200 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 flex flex-col h-full"
+              className="bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 flex flex-col h-full group"
             >
-              <div className="h-48 overflow-hidden">
+              <div className="relative h-48 overflow-hidden">
                 <img 
                   src={project.image} 
                   alt={project.title}
-                  className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
+                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
                 />
+                <div className="absolute top-4 left-4 flex items-center gap-2">
+                  {getTypeIcon(project.type)}
+                  <span className={`px-2 py-1 rounded-full text-xs font-medium ${getTypeBadge(project.type)}`}>
+                    {project.type.toUpperCase()}
+                  </span>
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
+              
               <div className="p-6 flex flex-col flex-grow">
-                <div className="flex items-center justify-between mb-4">
-                  <h3 className="text-xl font-semibold text-gray-800 line-clamp-2">{project.title}</h3>
-                  <Star className="text-yellow-500 flex-shrink-0 ml-2" size={20} />
+                <div className="flex items-start justify-between mb-4">
+                  <h3 className="text-xl font-bold text-gray-800 line-clamp-2 flex-1">{project.title}</h3>
+                  {project.type === 'backend' && <Shield className="text-green-600 flex-shrink-0 ml-2" size={20} />}
                 </div>
                 
-                <p className="text-gray-600 mb-4 leading-relaxed flex-grow">
+                <p className="text-gray-600 mb-4 leading-relaxed flex-grow text-sm">
                   {project.description}
                 </p>
 
                 <div className="mb-4">
-                  <h4 className="text-sm font-semibold text-gray-700 mb-2">Key Features:</h4>
-                  <ul className="text-sm text-gray-600 space-y-1">
-                    {project.features.map((feature, featureIndex) => (
-                      <li key={featureIndex} className="flex items-center">
-                        <span className="w-1.5 h-1.5 bg-blue-600 rounded-full mr-2 flex-shrink-0"></span>
+                  <h4 className="text-sm font-semibold text-gray-700 mb-3 flex items-center">
+                    <span className="w-2 h-2 bg-blue-600 rounded-full mr-2"></span>
+                    Key Features:
+                  </h4>
+                  <ul className="text-sm text-gray-600 space-y-2">
+                    {project.features.slice(0, 4).map((feature, featureIndex) => (
+                      <li key={featureIndex} className="flex items-start">
+                        <span className="w-1.5 h-1.5 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full mr-2 mt-2 flex-shrink-0"></span>
                         {feature}
                       </li>
                     ))}
@@ -117,7 +190,7 @@ const Projects = () => {
                     {project.tech.map((tech, techIndex) => (
                       <span
                         key={techIndex}
-                        className="px-3 py-1 bg-blue-100 text-blue-800 text-xs rounded-full font-medium"
+                        className="px-3 py-1 bg-gradient-to-r from-blue-100 to-purple-100 text-blue-800 text-xs rounded-full font-medium border border-blue-200"
                       >
                         {tech}
                       </span>
@@ -128,7 +201,7 @@ const Projects = () => {
                 <div className="flex gap-3 mt-auto">
                   <a
                     href={project.github}
-                    className="flex-1 flex items-center justify-center px-4 py-2 bg-gray-800 text-white rounded-lg hover:bg-gray-900 transition-colors duration-300"
+                    className="flex-1 flex items-center justify-center px-4 py-2 bg-gradient-to-r from-gray-800 to-gray-900 text-white rounded-lg hover:from-gray-900 hover:to-black transition-all duration-300 transform hover:scale-105"
                   >
                     <Github size={16} className="mr-2" />
                     Code
@@ -136,7 +209,7 @@ const Projects = () => {
                   {project.live && (
                     <a
                       href={project.live}
-                      className="flex-1 flex items-center justify-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-300"
+                      className="flex-1 flex items-center justify-center px-4 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105"
                     >
                       <ExternalLink size={16} className="mr-2" />
                       Live
@@ -148,29 +221,41 @@ const Projects = () => {
           ))}
         </div>
 
+        {/* Other Projects */}
+        <div className="text-center mb-8">
+          <h3 className="text-2xl font-bold text-gray-800 mb-2">Other Projects</h3>
+          <div className="w-16 h-1 bg-gradient-to-r from-gray-400 to-gray-600 mx-auto rounded-full"></div>
+        </div>
+
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.filter(project => !project.featured).map((project, index) => (
             <div
               key={index}
-              className="bg-gray-50 rounded-xl overflow-hidden hover:shadow-md transition-shadow duration-300 flex flex-col h-full"
+              className="bg-white rounded-xl overflow-hidden hover:shadow-lg transition-all duration-300 flex flex-col h-full border border-gray-100 hover:border-blue-200 group"
             >
-              <div className="h-40 overflow-hidden">
+              <div className="relative h-40 overflow-hidden">
                 <img 
                   src={project.image} 
                   alt={project.title}
-                  className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
+                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
                 />
+                <div className="absolute top-3 left-3">
+                  <span className={`px-2 py-1 rounded-full text-xs font-medium ${getTypeBadge(project.type)}`}>
+                    {project.type.toUpperCase()}
+                  </span>
+                </div>
               </div>
-              <div className="p-6 flex flex-col flex-grow">
-                <h3 className="text-lg font-semibold text-gray-800 mb-3 line-clamp-2">{project.title}</h3>
-                <p className="text-gray-600 text-sm mb-4 flex-grow">{project.description}</p>
+              
+              <div className="p-5 flex flex-col flex-grow">
+                <h3 className="text-lg font-bold text-gray-800 mb-3 line-clamp-2">{project.title}</h3>
+                <p className="text-gray-600 text-sm mb-4 flex-grow line-clamp-3">{project.description}</p>
                 
                 <div className="mb-4">
                   <h4 className="text-xs font-semibold text-gray-700 mb-2">Key Features:</h4>
                   <ul className="text-xs text-gray-600 space-y-1">
                     {project.features.slice(0, 3).map((feature, featureIndex) => (
-                      <li key={featureIndex} className="flex items-center">
-                        <span className="w-1 h-1 bg-blue-600 rounded-full mr-2 flex-shrink-0"></span>
+                      <li key={featureIndex} className="flex items-start">
+                        <span className="w-1 h-1 bg-blue-600 rounded-full mr-2 mt-1.5 flex-shrink-0"></span>
                         {feature}
                       </li>
                     ))}
@@ -178,10 +263,10 @@ const Projects = () => {
                 </div>
                 
                 <div className="flex flex-wrap gap-1 mb-4">
-                  {project.tech.slice(0, 3).map((tech, techIndex) => (
+                  {project.tech.slice(0, 4).map((tech, techIndex) => (
                     <span
                       key={techIndex}
-                      className="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded-full"
+                      className="px-2 py-1 bg-blue-50 text-blue-700 text-xs rounded-full border border-blue-200"
                     >
                       {tech}
                     </span>
@@ -191,14 +276,14 @@ const Projects = () => {
                 <div className="flex gap-2 mt-auto">
                   <a
                     href={project.github}
-                    className="flex-1 text-center px-3 py-1 bg-gray-700 text-white rounded text-sm hover:bg-gray-800 transition-colors"
+                    className="flex-1 text-center px-3 py-2 bg-gray-800 text-white rounded-lg text-sm hover:bg-gray-900 transition-colors transform hover:scale-105"
                   >
                     Code
                   </a>
                   {project.live && (
                     <a
                       href={project.live}
-                      className="flex-1 text-center px-3 py-1 bg-blue-600 text-white rounded text-sm hover:bg-blue-700 transition-colors"
+                      className="flex-1 text-center px-3 py-2 bg-blue-600 text-white rounded-lg text-sm hover:bg-blue-700 transition-colors transform hover:scale-105"
                     >
                       Live
                     </a>
