@@ -66,7 +66,7 @@ const Projects = () => {
       github: "#",
       live: null,
       featured: true,
-      image: "https://images.unsplash.com/photo-1531746790731-6c087fecd65a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
       type: "ai/ml"
     },
     {
@@ -88,7 +88,7 @@ const Projects = () => {
       github: "https://github.com/Dineshkumar1432/dentalcare.git",
       live: null,
       featured: false,
-      image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      image: "https://images.unsplash.com/photo-1629909613654-28e377c37b09?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
       type: "fullstack"
     },
     {
@@ -99,7 +99,7 @@ const Projects = () => {
       github: "https://github.com/Dineshkumar1432/job-board-blueprint-gen.git",
       live: "#",
       featured: false,
-      image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
       type: "fullstack"
     }
   ];
@@ -128,18 +128,50 @@ const Projects = () => {
   };
 
   return (
-    <section id="projects" className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+    <section id="projects" className="py-20 bg-gradient-to-br from-gray-50 via-blue-50 to-purple-50">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-800 mb-4">Featured Projects</h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto rounded-full"></div>
-          <p className="text-lg text-gray-600 mt-6 max-w-2xl mx-auto">
-            A comprehensive showcase of my technical projects spanning backend development, AI/ML implementation, and full-stack solutions.
+        {/* Enhanced Heading Section */}
+        <div className="text-center mb-20">
+          <div className="relative inline-block">
+            <h2 className="text-5xl lg:text-6xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent mb-6">
+              Featured Projects
+            </h2>
+            <div className="absolute -top-2 -right-2 text-yellow-400 animate-pulse">
+              <Star size={24} />
+            </div>
+          </div>
+          
+          <div className="flex items-center justify-center mb-6">
+            <div className="h-1 w-16 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full"></div>
+            <div className="h-2 w-2 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-full mx-3"></div>
+            <div className="h-1 w-16 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-full"></div>
+          </div>
+          
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            A comprehensive showcase of my technical projects spanning 
+            <span className="font-semibold text-green-600"> backend development</span>, 
+            <span className="font-semibold text-purple-600"> AI/ML implementation</span>, and 
+            <span className="font-semibold text-blue-600"> full-stack solutions</span>.
           </p>
+          
+          <div className="mt-8 flex items-center justify-center gap-6">
+            <div className="flex items-center gap-2 px-4 py-2 bg-white rounded-full shadow-sm border border-gray-200">
+              <Server className="text-green-600" size={18} />
+              <span className="text-sm font-medium text-gray-700">Backend</span>
+            </div>
+            <div className="flex items-center gap-2 px-4 py-2 bg-white rounded-full shadow-sm border border-gray-200">
+              <Database className="text-purple-600" size={18} />
+              <span className="text-sm font-medium text-gray-700">AI/ML</span>
+            </div>
+            <div className="flex items-center gap-2 px-4 py-2 bg-white rounded-full shadow-sm border border-gray-200">
+              <Users className="text-blue-600" size={18} />
+              <span className="text-sm font-medium text-gray-700">Full Stack</span>
+            </div>
+          </div>
         </div>
 
         {/* Featured Projects */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
           {projects.filter(project => project.featured).map((project, index) => (
             <div
               key={index}
@@ -222,9 +254,13 @@ const Projects = () => {
         </div>
 
         {/* Other Projects */}
-        <div className="text-center mb-8">
-          <h3 className="text-2xl font-bold text-gray-800 mb-2">Other Projects</h3>
-          <div className="w-16 h-1 bg-gradient-to-r from-gray-400 to-gray-600 mx-auto rounded-full"></div>
+        <div className="text-center mb-10">
+          <h3 className="text-3xl font-bold bg-gradient-to-r from-gray-700 to-gray-900 bg-clip-text text-transparent mb-4">Other Projects</h3>
+          <div className="flex items-center justify-center">
+            <div className="h-1 w-12 bg-gradient-to-r from-gray-400 to-gray-600 rounded-full"></div>
+            <div className="h-1.5 w-1.5 bg-gray-500 rounded-full mx-2"></div>
+            <div className="h-1 w-12 bg-gradient-to-r from-gray-600 to-gray-400 rounded-full"></div>
+          </div>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
